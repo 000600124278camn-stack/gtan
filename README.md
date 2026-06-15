@@ -590,8 +590,8 @@ class="btn-primary">
 
 </body>
 </html>
-```
-```css
+
+css
 /* ====================================
    Yokohama Suiran High School
    style.css
