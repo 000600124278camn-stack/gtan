@@ -1061,11 +1061,7 @@ class="fade">
 360°校内ツアー
 </h2>
 
-<div id="panorama">
-
-360°ツアー準備中
-
-</div>
+<div id="panorama"></div>
 
 </section>
 
@@ -1299,13 +1295,6 @@ id="floatingButton">
 ↑
 
 </button>
-
-
-<footer>
-
-横浜翠嵐高等学校
-
-</footer>
 
 <script>
 
@@ -1803,8 +1792,6 @@ modal.style.display='none';
 
 }
 
-});
-
 modal.addEventListener(
 'click',
 ()=>{
@@ -1875,10 +1862,39 @@ behavior:'smooth'
 
 });
 
+/* ==========================
+   360°パノラマツアー
+========================== */
+
+window.addEventListener('load',()=>{
+
+if(document.getElementById('panorama')){
+
+pannellum.viewer('panorama',{
+
+"type":"equirectangular",
+
+"panorama":
+"https://pannellum.org/images/alma.jpg",
+
+"autoLoad":true,
+
+"showZoomCtrl":true,
+
+"showFullscreenCtrl":true,
+
+"autoRotate":-2
+
+});
+
+}
+
 });
 
 </script>
 
+</body>
+</html>
 
 
 
