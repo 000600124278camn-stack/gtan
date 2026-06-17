@@ -17,32 +17,25 @@ src="https://cdn.jsdelivr.net/npm/pannellum/build/pannellum.js">
 <meta name="viewport"
 content="width=device-width, initial-scale=1.0">
 
-<title>
+<title>横浜翠嵐高等学校</title>
 
-<meta
-name="description"
+<meta name="description"
 content="横浜翠嵐高等学校公式サイト">
 
-<meta
-property="og:title"
+<meta property="og:title"
 content="横浜翠嵐高等学校">
 
-<meta
-property="og:description"
+<meta property="og:description"
 content="未来を創る挑戦者たちへ">
 
-<meta
-property="og:type"
+<meta property="og:type"
 content="website">
 
-<meta
-property="og:image"
+<meta property="og:image"
 content="images/ogp.jpg">
 
-<meta
-property="og:url"
+<meta property="og:url"
 content="https://example.com">
-</title>
 
 <meta
 name="description"
