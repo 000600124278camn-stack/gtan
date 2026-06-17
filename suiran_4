@@ -1273,7 +1273,44 @@ class="gallery-image">
 </section>
 
 <!-- フッター -->
+<footer>
 
+横浜翠嵐高等学校
+
+</footer>
+
+<div id="imageModal">
+
+<span id="closeModal">
+✕
+</span>
+
+<img id="modalImage">
+
+</div>
+
+<a
+href="#chat"
+id="floatingButton">
+
+受験相談
+
+</a>
+
+<button id="topButton">
+
+↑
+
+</button>
+
+<script>
+
+/* すべてのJavaScript */
+
+</script>
+
+</body>
+</html>
 <footer>
 
 横浜翠嵐高等学校
@@ -1741,6 +1778,8 @@ document.getElementById(
 'closeModal'
 );
 
+if(modal && modalImage && closeModal){
+
 images.forEach(img=>{
 
 img.addEventListener(
@@ -1761,6 +1800,18 @@ closeModal.addEventListener(
 ()=>{
 
 modal.style.display='none';
+
+});
+
+modal.addEventListener(
+'click',
+()=>{
+
+modal.style.display='none';
+
+});
+
+}
 
 });
 
@@ -1837,6 +1888,9 @@ behavior:'smooth'
 });
 
 </script>
+
+
+
 <div id="imageModal">
 
 <span id="closeModal">
@@ -1854,11 +1908,22 @@ id="floatingButton">
 受験相談
 
 </a>
+
 <button id="topButton">
 
 ↑
 
 </button>
+
+<script>
+
+/* JavaScript全部 */
+
+</script>
+
+</body>
+</html>
+
 </body>
 </html>
 
