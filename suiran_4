@@ -37,9 +37,6 @@ content="images/ogp.jpg">
 <meta property="og:url"
 content="https://example.com">
 
-<meta
-name="description"
-content="横浜翠嵐高等学校公式サイト">
 
 <style>
 
@@ -1303,14 +1300,7 @@ id="floatingButton">
 
 </button>
 
-<script>
 
-/* すべてのJavaScript */
-
-</script>
-
-</body>
-</html>
 <footer>
 
 横浜翠嵐高等学校
@@ -1891,39 +1881,4 @@ behavior:'smooth'
 
 
 
-<div id="imageModal">
-
-<span id="closeModal">
-✕
-</span>
-
-<img id="modalImage">
-
-</div>
-
-<a
-href="#chat"
-id="floatingButton">
-
-受験相談
-
-</a>
-
-<button id="topButton">
-
-↑
-
-</button>
-
-<script>
-
-/* JavaScript全部 */
-
-</script>
-
-</body>
-</html>
-
-</body>
-</html>
 
