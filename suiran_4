@@ -1337,28 +1337,34 @@ data-target="100">
 翠嵐公式マスコット
 </h2>
 
-<div class="mascot-box">
+<div class="mascot-team">
+
+<div class="mascot-card">
 
 <img
 src="images/suiran_ika.png"
-alt="翠嵐イカ"
+alt="翠イカ"
 class="mascot-image">
 
-<div class="mascot-text">
-
-<h3>
-翠イカ（すいいか）
-</h3>
+<h3>🦑 翠イカ</h3>
 
 <p>
+探究と知性を象徴する未来型イカ。
+</p>
 
-横浜翠嵐高校の探究精神から生まれた
-未来型イカマスコット。
+</div>
 
-頭脳明晰で好奇心旺盛。
-宇宙・科学・文化・スポーツまで
-何でも挑戦するスーパーイカです。
+<div class="mascot-card">
 
+<img
+src="images/suiran_kuma.png"
+alt="翠くま"
+class="mascot-image">
+
+<h3>🐻 翠くま</h3>
+
+<p>
+優しさと挑戦する心を持つ翠嵐の応援団長。
 </p>
 
 </div>
