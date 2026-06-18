@@ -902,6 +902,7 @@ transform:translateY(0);
 }
 
 }
+
 .bg-orb{
 
 position:fixed;
@@ -1163,7 +1164,78 @@ top:100%;
 left:100%;
 
 }
+/* ======================
+   マスコット
+====================== */
 
+.mascot-team{
+
+display:flex;
+
+justify-content:center;
+
+gap:40px;
+
+flex-wrap:wrap;
+
+margin-top:50px;
+
+}
+
+.mascot-card{
+
+background:white;
+
+padding:30px;
+
+width:320px;
+
+border-radius:25px;
+
+text-align:center;
+
+box-shadow:var(--shadow);
+
+transition:.4s;
+
+}
+
+.mascot-card:hover{
+
+transform:
+translateY(-10px)
+scale(1.03);
+
+}
+
+.mascot-image{
+
+width:220px;
+
+height:auto;
+
+margin-bottom:20px;
+
+animation:
+mascotFloat 4s ease-in-out infinite;
+
+}
+
+@keyframes mascotFloat{
+
+0%{
+transform:translateY(0);
+}
+
+50%{
+transform:translateY(-12px);
+}
+
+100%{
+transform:translateY(0);
+}
+
+}
 </style>
 
 </head>
