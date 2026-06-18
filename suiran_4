@@ -1666,31 +1666,40 @@ header.style.background =
 }
 );
 
+/* =====================================
+ULTRA STAR SKY EFFECT
+===================================== */
 
-/* 星空エフェクト */
-
-const stars =
+const starsContainer =
 document.createElement('div');
 
-stars.style.position='fixed';
-stars.style.top='0';
-stars.style.left='0';
-stars.style.width='100%';
-stars.style.height='100%';
-stars.style.pointerEvents='none';
-stars.style.zIndex='-1';
+starsContainer.style.position='fixed';
+starsContainer.style.top='0';
+starsContainer.style.left='0';
+starsContainer.style.width='100%';
+starsContainer.style.height='100%';
+starsContainer.style.pointerEvents='none';
+starsContainer.style.zIndex='-1';
+starsContainer.style.overflow='hidden';
 
-document.body.appendChild(stars);
+document.body.appendChild(starsContainer);
 
-for(let i=0;i<120;i++){
+/* 星生成 */
+
+for(let i=0;i<300;i++){
 
 const star =
 document.createElement('div');
 
+const size =
+Math.random()*3+1;
+
 star.style.position='absolute';
 
-star.style.width='2px';
-star.style.height='2px';
+star.style.width=size+'px';
+star.style.height=size+'px';
+
+star.style.borderRadius='50%';
 
 star.style.background='white';
 
@@ -1703,13 +1712,113 @@ Math.random()*100+'%';
 star.style.opacity=
 Math.random();
 
-stars.appendChild(star);
+star.style.animation=
+`twinkle ${2+Math.random()*4}s infinite`;
+
+starsContainer.appendChild(star);
 
 }
 
-console.log(
-'YOKOHAMA SUIRAN HIGH SCHOOL'
+/* 流れ星 */
+
+function createMeteor(){
+
+const meteor =
+document.createElement('div');
+
+meteor.style.position='absolute';
+
+meteor.style.width='200px';
+meteor.style.height='2px';
+
+meteor.style.background=
+'linear-gradient(to right, white, transparent)';
+
+meteor.style.top=
+Math.random()*50+'%';
+
+meteor.style.left='-250px';
+
+meteor.style.transform=
+'rotate(-25deg)';
+
+meteor.style.opacity='0.9';
+
+meteor.style.animation=
+'meteor 2s linear forwards';
+
+starsContainer.appendChild(meteor);
+
+setTimeout(()=>{
+
+meteor.remove();
+
+},2000);
+
+}
+
+setInterval(
+createMeteor,
+4000
 );
+
+/* CSS追加 */
+
+const style =
+document.createElement('style');
+
+style.innerHTML = `
+
+@keyframes twinkle{
+
+0%{
+opacity:0.2;
+transform:scale(1);
+}
+
+50%{
+opacity:1;
+transform:scale(1.8);
+}
+
+100%{
+opacity:0.2;
+transform:scale(1);
+}
+
+}
+
+@keyframes meteor{
+
+0%{
+
+transform:
+translateX(0)
+translateY(0)
+rotate(-25deg);
+
+opacity:1;
+
+}
+
+100%{
+
+transform:
+translateX(1800px)
+translateY(700px)
+rotate(-25deg);
+
+opacity:0;
+
+}
+
+}
+
+`;
+
+document.head.appendChild(style);
+
+
 
 /* ハンバーガーメニュー */
 
