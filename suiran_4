@@ -975,7 +975,113 @@ transform:translateY(0);
 }
 
 }
+/* すごいぞ翠嵐 */
 
+#amazing{
+
+background:
+linear-gradient(
+135deg,
+#fef9c3,
+#dbeafe,
+#dcfce7
+);
+
+border-radius:40px;
+
+margin:100px 5%;
+
+box-shadow:0 20px 60px rgba(0,0,0,.1);
+
+}
+
+.amazing-grid{
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(250px,1fr));
+
+gap:30px;
+
+}
+
+.amazing-card{
+
+background:white;
+
+padding:40px;
+
+border-radius:25px;
+
+text-align:center;
+
+font-size:1.2rem;
+
+box-shadow:
+0 15px 40px rgba(0,0,0,.1);
+
+transition:.4s;
+
+}
+
+.amazing-card:hover{
+
+transform:
+translateY(-10px)
+scale(1.05);
+
+}
+
+.amazing-card h3{
+
+margin:20px 0;
+
+color:#0f2747;
+
+font-size:1.5rem;
+
+}
+.amazing-card{
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+.amazing-card::before{
+
+content:'';
+
+position:absolute;
+
+top:-100%;
+left:-100%;
+
+width:200%;
+height:200%;
+
+background:
+linear-gradient(
+45deg,
+transparent,
+rgba(255,255,255,.6),
+transparent
+);
+
+transform:rotate(25deg);
+
+transition:.8s;
+
+}
+
+.amazing-card:hover::before{
+
+top:100%;
+left:100%;
+
+}
 
 </style>
 
@@ -1132,6 +1238,55 @@ data-target="100">
 
 <p>挑戦率</p>
 
+</div>
+
+</div>
+
+</section>
+<!-- こんなところがすごいぞ翠嵐 -->
+
+<section id="amazing" class="fade">
+
+<h2>
+✨こんなところがすごいぞ翠嵐✨
+</h2>
+
+<div class="amazing-grid">
+
+<div class="amazing-card">
+🏆
+<h3>圧倒的な進学実績</h3>
+<p>
+東京大学をはじめとする
+難関大学へ毎年多数進学。
+</p>
+</div>
+
+<div class="amazing-card">
+🔬
+<h3>探究活動が本格的</h3>
+<p>
+自ら課題を発見し、
+研究する力を育てます。
+</p>
+</div>
+
+<div class="amazing-card">
+🌎
+<h3>多様な挑戦</h3>
+<p>
+留学・コンテスト・研究発表など
+挑戦の機会が豊富。
+</p>
+</div>
+
+<div class="amazing-card">
+🤝
+<h3>最高の仲間</h3>
+<p>
+切磋琢磨できる仲間との
+出会いがあります。
+</p>
 </div>
 
 </div>
