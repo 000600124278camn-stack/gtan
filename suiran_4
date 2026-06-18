@@ -973,6 +973,87 @@ transform:translateY(-40px);
 100%{
 transform:translateY(0);
 }
+/* マスコット */
+
+.mascot-box{
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+gap:50px;
+
+flex-wrap:wrap;
+
+background:white;
+
+padding:50px;
+
+border-radius:30px;
+
+box-shadow:var(--shadow);
+
+}
+
+.mascot-image{
+
+width:300px;
+
+max-width:100%;
+
+border-radius:50%;
+
+box-shadow:
+0 0 30px #38bdf8,
+0 0 60px #22c55e,
+0 0 100px #facc15;
+
+animation:
+mascotFloat 4s ease-in-out infinite;
+
+}
+
+.mascot-text{
+
+max-width:500px;
+
+}
+
+.mascot-text h3{
+
+font-size:2rem;
+
+margin-bottom:20px;
+
+color:var(--green);
+
+}
+
+.mascot-text p{
+
+font-size:1.1rem;
+
+line-height:2;
+
+}
+
+@keyframes mascotFloat{
+
+0%{
+transform:translateY(0);
+}
+
+50%{
+transform:translateY(-15px);
+}
+
+100%{
+transform:translateY(0);
+}
+
+}
 
 }
 /* すごいぞ翠嵐 */
@@ -1250,6 +1331,41 @@ data-target="100">
 <h2>
 ✨こんなところがすごいぞ翠嵐✨
 </h2>
+<section id="mascot" class="fade">
+
+<h2>
+翠嵐公式マスコット
+</h2>
+
+<div class="mascot-box">
+
+<img
+src="images/suiran_ika.png"
+alt="翠嵐イカ"
+class="mascot-image">
+
+<div class="mascot-text">
+
+<h3>
+翠イカ（すいいか）
+</h3>
+
+<p>
+
+横浜翠嵐高校の探究精神から生まれた
+未来型イカマスコット。
+
+頭脳明晰で好奇心旺盛。
+宇宙・科学・文化・スポーツまで
+何でも挑戦するスーパーイカです。
+
+</p>
+
+</div>
+
+</div>
+
+</section>
 
 <div class="amazing-grid">
 
