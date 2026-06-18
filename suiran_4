@@ -1753,158 +1753,127 @@ header.style.background =
 }
 );
 
+
 /* =====================================
-ULTRA STAR SKY EFFECT
+COLORFUL PARTICLE SKY
 ===================================== */
 
-const starsContainer =
+const particles =
 document.createElement('div');
 
-starsContainer.style.position='fixed';
-starsContainer.style.top='0';
-starsContainer.style.left='0';
-starsContainer.style.width='100%';
-starsContainer.style.height='100%';
-starsContainer.style.pointerEvents='none';
-starsContainer.style.zIndex='-1';
-starsContainer.style.overflow='hidden';
+particles.style.position='fixed';
+particles.style.top='0';
+particles.style.left='0';
+particles.style.width='100%';
+particles.style.height='100%';
+particles.style.pointerEvents='none';
+particles.style.zIndex='-1';
+particles.style.overflow='hidden';
 
-document.body.appendChild(starsContainer);
+document.body.appendChild(particles);
 
-/* 星生成 */
+const colors = [
+'#38bdf8',
+'#22c55e',
+'#facc15',
+'#ec4899',
+'#8b5cf6'
+];
 
-for(let i=0;i<300;i++){
+for(let i=0;i<120;i++){
 
-const star =
+const p =
 document.createElement('div');
 
 const size =
-Math.random()*3+1;
+Math.random()*12+4;
 
-star.style.position='absolute';
+p.style.position='absolute';
 
-star.style.width=size+'px';
-star.style.height=size+'px';
+p.style.width=size+'px';
+p.style.height=size+'px';
 
-star.style.borderRadius='50%';
+p.style.borderRadius='50%';
 
-star.style.background='white';
+p.style.background=
+colors[
+Math.floor(
+Math.random()*colors.length
+)
+];
 
-star.style.left=
+p.style.left=
 Math.random()*100+'%';
 
-star.style.top=
+p.style.top=
 Math.random()*100+'%';
 
-star.style.opacity=
-Math.random();
+p.style.opacity='.25';
 
-star.style.animation=
-`twinkle ${2+Math.random()*4}s infinite`;
+p.style.filter=
+'blur(2px)';
 
-starsContainer.appendChild(star);
+p.style.animation=
+`floatParticle ${
+8+Math.random()*10
+}s ease-in-out infinite`;
+
+p.style.animationDelay=
+Math.random()*5+'s';
+
+particles.appendChild(p);
 
 }
 
-/* 流れ星 */
-
-function createMeteor(){
-
-const meteor =
-document.createElement('div');
-
-meteor.style.position='absolute';
-
-meteor.style.width='200px';
-meteor.style.height='2px';
-
-meteor.style.background=
-'linear-gradient(to right, white, transparent)';
-
-meteor.style.top=
-Math.random()*50+'%';
-
-meteor.style.left='-250px';
-
-meteor.style.transform=
-'rotate(-25deg)';
-
-meteor.style.opacity='0.9';
-
-meteor.style.animation=
-'meteor 2s linear forwards';
-
-starsContainer.appendChild(meteor);
-
-setTimeout(()=>{
-
-meteor.remove();
-
-},2000);
-
-}
-
-setInterval(
-createMeteor,
-4000
-);
-
-/* CSS追加 */
-
-const style =
+const particleStyle =
 document.createElement('style');
 
-style.innerHTML = `
+particleStyle.innerHTML=`
 
-@keyframes twinkle{
+@keyframes floatParticle{
 
 0%{
-opacity:0.2;
-transform:scale(1);
+transform:
+translateY(0)
+translateX(0)
+scale(1);
+}
+
+25%{
+transform:
+translateY(-40px)
+translateX(20px)
+scale(1.2);
 }
 
 50%{
-opacity:1;
-transform:scale(1.8);
+transform:
+translateY(-80px)
+translateX(-20px)
+scale(1);
+}
+
+75%{
+transform:
+translateY(-40px)
+translateX(15px)
+scale(1.3);
 }
 
 100%{
-opacity:0.2;
-transform:scale(1);
-}
-
-}
-
-@keyframes meteor{
-
-0%{
-
 transform:
-translateX(0)
 translateY(0)
-rotate(-25deg);
-
-opacity:1;
-
-}
-
-100%{
-
-transform:
-translateX(1800px)
-translateY(700px)
-rotate(-25deg);
-
-opacity:0;
-
+translateX(0)
+scale(1);
 }
 
 }
 
 `;
 
-document.head.appendChild(style);
-
+document.head.appendChild(
+particleStyle
+);
 
 
 /* ハンバーガーメニュー */
@@ -2088,6 +2057,233 @@ pannellum.viewer('panorama',{
 }
 
 });
+/* =====================================
+AURORA EFFECT
+===================================== */
+
+const aurora =
+document.createElement('div');
+
+aurora.id='aurora';
+
+document.body.appendChild(aurora);
+
+const auroraStyle =
+document.createElement('style');
+
+auroraStyle.innerHTML=`
+
+#aurora{
+
+position:fixed;
+inset:0;
+
+pointer-events:none;
+
+z-index:-3;
+
+background:
+
+radial-gradient(
+circle at 20% 20%,
+rgba(56,189,248,.25),
+transparent 40%
+),
+
+radial-gradient(
+circle at 80% 30%,
+rgba(34,197,94,.25),
+transparent 40%
+),
+
+radial-gradient(
+circle at 50% 80%,
+rgba(250,204,21,.20),
+transparent 40%
+);
+
+animation:
+auroraMove 18s ease-in-out infinite;
+
+}
+
+@keyframes auroraMove{
+
+0%{
+transform:scale(1);
+}
+
+50%{
+transform:scale(1.15);
+}
+
+100%{
+transform:scale(1);
+}
+
+}
+
+`;
+
+document.head.appendChild(
+auroraStyle
+);
+
+
+/* =====================================
+MOUSE LIGHT EFFECT
+===================================== */
+
+const mouseLight =
+document.createElement('div');
+
+mouseLight.id='mouseLight';
+
+document.body.appendChild(mouseLight);
+
+const lightStyle =
+document.createElement('style');
+
+lightStyle.innerHTML=`
+
+#mouseLight{
+
+position:fixed;
+
+width:350px;
+height:350px;
+
+border-radius:50%;
+
+background:
+radial-gradient(
+circle,
+rgba(255,255,255,.35),
+transparent 70%
+);
+
+pointer-events:none;
+
+z-index:-1;
+
+transform:
+translate(-50%,-50%);
+
+transition:
+left .1s linear,
+top .1s linear;
+
+}
+
+`;
+
+document.head.appendChild(
+lightStyle
+);
+
+document.addEventListener(
+'mousemove',
+e=>{
+
+mouseLight.style.left=
+e.clientX+'px';
+
+mouseLight.style.top=
+e.clientY+'px';
+
+}
+);
+
+
+/* =====================================
+FLOATING SPARKLES
+===================================== */
+
+for(let i=0;i<60;i++){
+
+const spark =
+document.createElement('div');
+
+spark.style.position='fixed';
+
+spark.style.width='4px';
+spark.style.height='4px';
+
+spark.style.borderRadius='50%';
+
+spark.style.background='white';
+
+spark.style.boxShadow=
+'0 0 15px white';
+
+spark.style.left=
+Math.random()*100+'%';
+
+spark.style.top=
+Math.random()*100+'%';
+
+spark.style.pointerEvents='none';
+
+spark.style.zIndex='-1';
+
+spark.style.animation=
+`sparkFloat ${
+5+Math.random()*10
+}s linear infinite`;
+
+spark.style.animationDelay=
+Math.random()*5+'s';
+
+document.body.appendChild(
+spark
+);
+
+}
+
+const sparkStyle =
+document.createElement('style');
+
+sparkStyle.innerHTML=`
+
+@keyframes sparkFloat{
+
+0%{
+
+transform:
+translateY(0);
+
+opacity:0;
+
+}
+
+20%{
+
+opacity:1;
+
+}
+
+80%{
+
+opacity:1;
+
+}
+
+100%{
+
+transform:
+translateY(-250px);
+
+opacity:0;
+
+}
+
+}
+
+`;
+
+document.head.appendChild(
+sparkStyle
+);
 
 </script>
 
